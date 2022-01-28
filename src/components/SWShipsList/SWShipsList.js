@@ -1,8 +1,8 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 import { SWShipsItem } from "../SWShipsItem/SWShipsItem";
 import PropTypes from 'prop-types';
 
-export class SWShipsList extends Component {
+export class SWShipsList extends PureComponent {
     render(){
         const {data,status, error}=this.props;
         return <div>

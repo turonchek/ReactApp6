@@ -1,8 +1,8 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 import { Pagination } from "../Pagination/Pagination";
 import { SWShipsList } from "../SWShipsList/SWShipsList";
 
-export class SWShipsPage extends Component{
+export class SWShipsPage extends PureComponent{
 
     constructor(props){
         super(props);
@@ -23,6 +23,9 @@ export class SWShipsPage extends Component{
         }, ()=>{
             this.fetchData();
         })
+    }
+    componentDidUpdate(){
+        console.log(`update`)
     }
 
     fetchData = () => {
@@ -52,6 +55,7 @@ export class SWShipsPage extends Component{
     }
 
     render(){
+        console.log(`render`)
         const { status, error, data, currentPage } = this.state;
         return(
             <div>
@@ -71,6 +75,7 @@ export class SWShipsPage extends Component{
     }
 
     componentDidMount() {
+        console.log(`mount`)
         this.fetchData();
     }
 }
